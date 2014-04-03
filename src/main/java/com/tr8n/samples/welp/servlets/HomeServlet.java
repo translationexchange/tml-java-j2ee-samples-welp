@@ -36,7 +36,7 @@ public class HomeServlet extends Tr8nServlet {
 
 	@Override
 	public void doTr8nGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-		request.getRequestDispatcher("/welp/home.jsp").forward(request, response);
+		request.getRequestDispatcher("/welp/home/index.jsp").forward(request, response);
 	}
 
 }

@@ -20,6 +20,33 @@
 	</tag>
     
   <tag>
+    <name>featured_languages</name>
+    <tag-class>com.tr8n.j2ee.tags.FeaturedLanguagesTag</tag-class>
+    <body-content>empty</body-content>
+    <description><![CDATA[Displayes a list of featured languages (normally in the footer).]]></description>
+  </tag>
+
+  <tag>
+    <name>powered_by_tr8n</name>
+    <tag-class>com.tr8n.j2ee.tags.PoweredByTr8nTag</tag-class>
+    <body-content>empty</body-content>
+    <description><![CDATA[Displayes Tr8n logo and links back to Tr8n.]]></description>
+  </tag>
+    
+  <tag>
+    <name>block</name>
+    <tag-class>com.tr8n.j2ee.tags.BlockTag</tag-class>
+    <dynamic-attributes>true</dynamic-attributes>
+    <body-content>JSP</body-content>
+    <description><![CDATA[Allows to provide various options to body content]]></description>
+    <attribute>
+      <name>options</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
 		<name>tr</name>
 		<tag-class>com.tr8n.j2ee.tags.TrTag</tag-class>
 		<dynamic-attributes>true</dynamic-attributes>

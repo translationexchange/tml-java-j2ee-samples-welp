@@ -14,46 +14,47 @@
 </head>
 
 <body>
-	<!-- Static navbar -->
-	<div class="navbar navbar-default navbar-static-top" role="navigation">
-	    <div class="container">
-	        <div class="navbar-header">
-	            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-	                <span class="sr-only"><tr8n:tr label="Toggle navigation"/></span>
-	                <span class="icon-bar"></span>
-	                <span class="icon-bar"></span>
-	                <span class="icon-bar"></span>
-	            </button>
-	            <a class="navbar-brand" href="#"><strong>Welp</strong></a>
-	        </div>
-	        <div class="navbar-collapse collapse">
-	            <ul class="nav navbar-nav">
-	                <li><a href="#"><tr8n:tr label="About Us"/></a></li>
-	                <li><a href="#"><tr8n:tr label="Search"/></a></li>
-	                <li><a href="#"><tr8n:tr label="Write a Review"/></a></li>
-	                <li><a href="#"><tr8n:tr label="Find Friends"/></a></li>
-	                <li><a href="#"><tr8n:tr label="Help"/></a></li>
-	            </ul>
-	            <ul class="nav navbar-nav navbar-right">
-	                <li>
-	                	<tr8n:language_selector/>
-	                </li>
-	                <li class="dropdown">
-	                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-		                    <tr8n:tr label="More {caret}" token.caret="<b class='caret'></b>" />
-	                    </a>
-	                    <ul class="dropdown-menu">
-	                        <li class="divider"></li>
-	                        <li><a href="#"><tr8n:tr label="Log in"/></a></li>
-	                        <li class="divider"></li>
-	                        <li><a href="#"><tr8n:tr label="Sign Up"/></a></li>
-	                    </ul>
-	                </li>
-	            </ul>
-	        </div><!--/.nav-collapse -->
-	    </div><!--/.container-fluid -->
-	</div>
-
+  <tr8n:block source="/navigation">
+		<!-- Static navbar -->
+		<div class="navbar navbar-default navbar-static-top" role="navigation">
+		    <div class="container">
+		        <div class="navbar-header">
+		            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		                <span class="sr-only"><tr8n:tr label="Toggle navigation"/></span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		            </button>
+		            <a class="navbar-brand" href="#"><strong>Welp</strong></a>
+		        </div>
+		        <div class="navbar-collapse collapse">
+		            <ul class="nav navbar-nav">
+		                <li><a href="#"><tr8n:tr label="About Us"/></a></li>
+		                <li><a href="#"><tr8n:tr label="Search"/></a></li>
+		                <li><a href="#"><tr8n:tr label="Write a Review"/></a></li>
+		                <li><a href="#"><tr8n:tr label="Find Friends"/></a></li>
+		                <li><a href="#"><tr8n:tr label="Help"/></a></li>
+		            </ul>
+		            <ul class="nav navbar-nav navbar-right">
+		                <li>
+		                	<tr8n:language_selector/>
+		                </li>
+		                <li class="dropdown">
+		                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+			                    <tr8n:tr label="More {caret}" token.caret="<b class='caret'></b>" />
+		                    </a>
+		                    <ul class="dropdown-menu">
+		                        <li class="divider"></li>
+		                        <li><a href="#"><tr8n:tr label="Log in"/></a></li>
+		                        <li class="divider"></li>
+		                        <li><a href="#"><tr8n:tr label="Sign Up"/></a></li>
+		                    </ul>
+		                </li>
+		            </ul>
+		        </div><!--/.nav-collapse -->
+		    </div><!--/.container-fluid -->
+		</div>
+  </tr8n:block>
 
 
 	<div class="container">
@@ -224,12 +225,20 @@
 	    </div>
 	    <br><br><br>
 	  </div>
+
+	  <div style="text-align:center; padding:20px;">
+	    <tr8n:featured_languages/>
+	  </div>
 	
+    <div style="text-align:center; padding:20px;">
+      <tr8n:powered_by_tr8n/>
+    </div>
 	</div> <!-- /container -->
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
+  
 </body>
 </html>
 
