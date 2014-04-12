@@ -35,7 +35,7 @@ public class WelpListener extends Tr8nListener {
 //			"host", 	"https://sandbox.tr8nhub.com"
 //		));
 		
-		Tr8n.getConfig().setApplication(Utils.buildMap(
+		Tr8n.getConfig().setApplication(Utils.buildStringMap(
 			"key", 		"6369467e8d46aed99",
 			"secret", 	"135c1dc57af6f85bc",
 			"host", 	"http://localhost:3000"
