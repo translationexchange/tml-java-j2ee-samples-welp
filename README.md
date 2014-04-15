@@ -17,7 +17,7 @@ If you are using Maven, use the following procedures:
 $ git clone https://github.com/tr8n/tr8n_samples_welp_j2ee.git
 ```
 
-Open the project in Eclipse using maven plugin and run the web application.
+Import the project into Eclipse using the Maven plugin and run the web application.
 
 
 Where can I get more information?
