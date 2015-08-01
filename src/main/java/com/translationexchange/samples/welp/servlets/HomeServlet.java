@@ -20,7 +20,7 @@
  *  THE SOFTWARE.
  */
 
-package com.tr8n.samples.welp.servlets;
+package com.translationexchange.samples.welp.servlets;
 
 import java.io.IOException;
 
@@ -28,15 +28,15 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.tr8n.j2ee.servlets.Tr8nServlet;
+import com.translationexchange.j2ee.servlets.LocalizedServlet;
 
-public class HomeServlet extends Tr8nServlet {
+public class HomeServlet extends LocalizedServlet {
 
 	private static final long serialVersionUID = 1104854594838062322L;
 
 	@Override
-	public void doTr8nGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-		request.getRequestDispatcher("/welp/home/index.jsp").forward(request, response);
+	public void doLocalizedGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		request.getRequestDispatcher("/home/index.jsp").forward(request, response);
 	}
 
 }

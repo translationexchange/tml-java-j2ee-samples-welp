@@ -20,29 +20,28 @@
  *  THE SOFTWARE.
  */
 
-package com.tr8n.samples.welp.listeners;
+package com.translationexchange.samples.welp.listeners;
 
-import com.tr8n.core.Tr8n;
-import com.tr8n.core.Utils;
-import com.tr8n.j2ee.listeners.Tr8nListener;
+import com.translationexchange.core.Tml;
+import com.translationexchange.core.Utils;
+import com.translationexchange.j2ee.listeners.TmlListener;
 
-public class WelpListener extends Tr8nListener {
+public class WelpListener extends TmlListener {
 
-	protected void configureTr8n() {
+	protected void configureTml() {
 //		Tr8n.getConfig().setApplication(Utils.buildMap(
 //			"key", 		"a8445a60494c70296",
 //			"secret", 	"1958ad820a75d4e66",
 //			"host", 	"https://sandbox.tr8nhub.com"
 //		));
 		
-		Tr8n.getConfig().setApplication(Utils.buildStringMap(
-			"key", 		"6369467e8d46aed99",
-			"secret", 	"135c1dc57af6f85bc",
-			"host", 	"http://localhost:3000"
+		Tml.getConfig().setApplication(Utils.buildMap(
+			"token", "b4335a2904d1d2b1cc50e3f72a88a7ea97815f264c802b5af638564286a240fb",
+			"host", "http://localhost:3000"
 		));
 
-		Tr8n.getConfig().setCache(Utils.buildMap(
-	    	"class", 	"com.tr8n.cache.Memcached",
+		Tml.getConfig().setCache(Utils.buildMap(
+	    	"class", 	"com.translationexchange.cache.Memcached",
 	        "host", 	"localhost:11211",
 	        "version", 	1,
 	        "timeout",	3600
