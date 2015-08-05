@@ -16,7 +16,7 @@
 <body>
   <tml:block source="/navigation">
 		<!-- Static navbar -->
-		<div class="navbar navbar-default navbar-static-top" role="navigation">
+		<div class="navbar navbar-default navbar-static-top">
 		    <div class="container">
 		        <div class="navbar-header">
 		            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -36,9 +36,7 @@
 		                <li><a href="#"><tml:tr label="Help"/></a></li>
 		            </ul>
 		            <ul class="nav navbar-nav navbar-right">
-		                <li>
-		                	<tml:language_selector/>
-		                </li>
+	                	<tml:language_selector type="bootstrap" element="li" />
 		                <li class="dropdown">
 		                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 			                    <tml:tr label="More {caret}" token.caret="<b class='caret'></b>" />
