@@ -9,12 +9,12 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="google" content="notranslate">
     <title>Welp</title>
-    <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
+    <tml:stylesheet_link ltr="assets/css/home_ltr.css" rtl="assets/css/home_rtl.css"/>
     <tml:scripts/>
 </head>
 
-<body>
-  <tml:block source="/navigation">
+<body <tml:language_dir_attribute/>>
+  <tml:source name="navigation">
 		<!-- Static navbar -->
 		<div class="navbar navbar-default navbar-static-top">
 		    <div class="container">
@@ -28,32 +28,35 @@
 		            <a class="navbar-brand" href="#"><strong>Welp</strong></a>
 		        </div>
 		        <div class="navbar-collapse collapse">
-		            <ul class="nav navbar-nav">
-		                <li><a href="#"><tml:tr label="About Us"/></a></li>
-		                <li><a href="#"><tml:tr label="Search"/></a></li>
-		                <li><a href="#"><tml:tr label="Write a Review"/></a></li>
-		                <li><a href="#"><tml:tr label="Find Friends"/></a></li>
-		                <li><a href="#"><tml:tr label="Help"/></a></li>
-		            </ul>
-		            <ul class="nav navbar-nav navbar-right">
-	                	<tml:language_selector type="bootstrap" element="li" />
-		                <li class="dropdown">
-		                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-			                    <tml:tr label="More {caret}" token.caret="<b class='caret'></b>" />
-		                    </a>
-		                    <ul class="dropdown-menu">
-		                        <li class="divider"></li>
-		                        <li><a href="#"><tml:tr label="Log in"/></a></li>
-		                        <li class="divider"></li>
-		                        <li><a href="#"><tml:tr label="Sign Up"/></a></li>
-		                    </ul>
-		                </li>
-		            </ul>
+                <tml:source name="menu">
+			            <ul class="nav navbar-nav">
+			                <li><a href="#"><tml:tr label="About Us"/></a></li>
+			                <li><a href="#"><tml:tr label="Search"/></a></li>
+			                <li><a href="#"><tml:tr label="Write a Review"/></a></li>
+			                <li><a href="#"><tml:tr label="Find Friends"/></a></li>
+			                <li><a href="#"><tml:tr label="Help"/></a></li>
+			            </ul>
+		            </tml:source>
+		            <tml:source name="login">
+			            <ul class="nav navbar-nav navbar-right">
+		                	<tml:language_selector type="bootstrap" element="li" />
+			                <li class="dropdown">
+			                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				                    <tml:tr label="More {caret}" token.caret="<b class='caret'></b>" />
+			                    </a>
+			                    <ul class="dropdown-menu">
+			                        <li class="divider"></li>
+			                        <li><a href="#"><tml:tr label="Log in"/></a></li>
+			                        <li class="divider"></li>
+			                        <li><a href="#"><tml:tr label="Sign Up"/></a></li>
+			                    </ul>
+			                </li>
+			            </ul>
+			         </tml:source>
 		        </div><!--/.nav-collapse -->
 		    </div><!--/.container-fluid -->
 		</div>
-  </tml:block>
-
+  </tml:source>
 
 	<div class="container">
 	
@@ -228,7 +231,6 @@
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-
   
 </body>
 </html>
