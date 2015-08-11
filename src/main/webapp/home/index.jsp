@@ -1,8 +1,9 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix='tml' uri='/tml-tags' %>
 
 <!doctype html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" dir="ltr">
+<html xmlns="http://www.w3.org/1999/xhtml" <tml:language_attributes/> >
 
 <head>
     <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
@@ -90,93 +91,29 @@
 	        <small class="pull-right"><a href="#"><tml:tr label="See More"/></a></small>
 	        <h5 class="text-primary"><tml:tr label="Restaurants"/></h5>
 	
-	
-	        <div class="media">
-	          <a class="pull-left" href="#">
-	            <span class="media-object media-img"></span>
-	          </a>
-	          <div class="media-body">
-	            <strong>1. <a href="">Ricky's Fish Tacos</a></strong>
-	            <div class="text-muted">
-	              <img src="assets/images/4-stars.png" title="<tml:trl label="{num} out of {count|| star}" num="4" count="5" />"/>
-	              <tml:tr label="{count|| Review}" token.count="14" />
-	            </div>
-	            <div class="media">
-	              <a class="pull-left" href="#">
-	                <span class="media-object media-img-sm"></span>
-	              </a>
-	              <div class="media-body">
-	                <p>Luckily, the perfect hot day food is a fish taco.</p>
-	              </div>
-	            </div>
-	          </div>
-	        </div>
-	
-	
-	        <div class="media">
-	          <a class="pull-left" href="#">
-	            <span class="media-object media-img"></span>
-	          </a>
-	          <div class="media-body">
-	            <strong>2. <a href="">Genwa Korean Bbq</a></strong>
-	            <div class="text-muted">
-	              <img src="assets/images/3-stars.png" title="<tml:trl label="{num} out of {count|| star}" token.num="3" token.count="5" />" />
-	              <tml:tr label="{count|| Review}" token.count="567" />
-	            </div>
-	            <div class="media">
-	              <a class="pull-left" href="#">
-	                <span class="media-object media-img-sm"></span>
-	              </a>
-	              <div class="media-body">
-	                <p>I love love love the fact that you get 25 side dishes.</p>
-	              </div>
-	            </div>
-	          </div>
-	        </div>
-	
-	        <div class="media">
-	          <a class="pull-left" href="#">
-	            <span class="media-object media-img"></span>
-	          </a>
-	          <div class="media-body">
-	            <strong>3. <a href="">Kang Hodong Baekjeong</a></strong>
-	            <div class="text-muted">
-	              <img src="assets/images/2-stars.png" title="<tml:trl label="{num} out of {count|| star}" token.num="2" token.count="5" />"/>
-	              <tml:tr label="{count|| Review}" token.count="1" />
-	            </div>
-	            <div class="media">
-	              <a class="pull-left" href="#">
-	                <span class="media-object media-img-sm"></span>
-	              </a>
-	              <div class="media-body">
-	                <p>Thick slices of juicy pastrami on rye hits the spot every time.</p>
-	              </div>
-	            </div>
-	          </div>
-	        </div>
-	
-	        <div class="media">
-	          <a class="pull-left" href="#">
-	            <span class="media-object media-img"></span>
-	          </a>
-	          <div class="media-body">
-	            <strong>4. <a href="">Guisados</a></strong>
-	            <div class="text-muted">
-	              <img src="assets/images/1-stars.png" title="<tml:trl label="{num} out of {count|| star}" token.num="1" token.count="5" />"/>
-	              <tml:tr label="{count|| Review}" token.count="14" />
-	            </div>
-	
-	            <div class="media">
-	              <a class="pull-left" href="#">
-	                <span class="media-object media-img-sm"></span>
-	              </a>
-	              <div class="media-body">
-	                <p>I can't wait to introduce more people to these orgasmic tacos.</p>
-	              </div>
-	            </div>
-	          </div>
-	        </div>
-	
+	        <c:forEach items="${restaurants}" var="restaurant">
+            <div class="media">
+              <a class="pull-left" href="#">
+                <span class="media-object media-img"></span>
+              </a>
+              <div class="media-body">
+                <strong>1. <a href="">${restaurant.name}</a></strong>
+                <div class="text-muted">
+                  <tml:image src="/assets/images/${restaurant.rating}-stars.png" title="{num} out of {count || star}" num="${restaurant.rating}" count="5" />
+                  <tml:tr label="{count|| Review}" token.count="${restaurant.review_count}" />
+                </div>
+                <div class="media">
+                  <a class="pull-left" href="#">
+                    <span class="media-object media-img-sm"></span>
+                  </a>
+                  <div class="media-body">
+                    <p><tml:tr label="${restaurant.last_comment}" /></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </c:forEach>
+
 	      </div>
 	
 	      <div class="col-sm-5">
@@ -219,9 +156,17 @@
 	        <hr>
 	
 	        <h4 class="text-primary"><tml:tr label="Welp on the go" /></h4>
-	        <p><tml:tr label="Get the Welp app on your mobile phone. It's free and helps you find great, local businesses on the go!"/></p>
-	        <button type="submit" class="btn btn-default btn-sm"><tml:tr label="Get it free now"/></button>
-	
+	        <p>
+             <tml:tr> 
+               Get the Welp app on your mobile phone. 
+             </tml:tr>
+             <tml:tr>
+               It's free and helps you find great, local businesses on the go!
+             </tml:tr> 	        
+	        </p>
+	        <button type="submit" class="btn btn-default btn-sm">
+	         <tml:tr label="Get it free now"/>
+	        </button>
 	      </div>
 	    </div>
 	    <br><br><br>

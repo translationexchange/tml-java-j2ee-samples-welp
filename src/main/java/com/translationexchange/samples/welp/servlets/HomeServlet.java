@@ -28,6 +28,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.translationexchange.core.Utils;
 import com.translationexchange.j2ee.servlets.LocalizedServlet;
 
 public class HomeServlet extends LocalizedServlet {
@@ -36,6 +37,32 @@ public class HomeServlet extends LocalizedServlet {
 
 	@Override
 	public void doLocalizedGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		request.setAttribute("restaurants", Utils.buildList(
+			Utils.buildMap(
+				"name", "Ricky's Fish Tacos",
+				"rating", 4,
+				"review_count", 14,
+				"last_comment", "Luckily, the perfect hot day food is a fish taco."
+			),
+			Utils.buildMap(
+				"name", "Genwa Korean Bbq",
+				"rating", 3,
+				"review_count", 567,
+				"last_comment", "I love love love the fact that you get 25 side dishes."
+			),
+			Utils.buildMap(
+				"name", "Kang Hodong Baekjeong",
+				"rating", 2,
+				"review_count", 1,
+				"last_comment", "Thick slices of juicy pastrami on rye hits the spot every time."
+			),
+			Utils.buildMap(
+				"name", "Guisados",
+				"rating", 1,
+				"review_count", 12,
+				"last_comment", "I can't wait to introduce more people to these orgasmic tacos."
+			)
+		));		
 		request.getRequestDispatcher("/home/index.jsp").forward(request, response);
 	}
 
