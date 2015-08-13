@@ -63,7 +63,7 @@ public class HomeServlet extends LocalizedServlet {
 				"last_comment", "I can't wait to introduce more people to these orgasmic tacos."
 			)
 		));		
-		request.getRequestDispatcher("/home/index.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/views/home/index.jsp").forward(request, response);
 	}
 
 }
