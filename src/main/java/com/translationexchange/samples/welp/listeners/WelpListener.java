@@ -39,12 +39,13 @@ public class WelpListener extends TmlListener {
 
 	protected void configureTml() {
 		Tml.getConfig().setApplication(Utils.buildMap(
-			"key", "6830c3689e18fcaa60820b0f4da3425f2b9126bebb7c494769fbef7723eae42b",	
-			"token", "b4335a2904d1d2b1cc50e3f72a88a7ea97815f264c802b5af638564286a240fb",
+			"key", "dbbf1d68249d613d2ec5c21ff2dd266f5cdbe53b6c32ebc0e24969df59a39457",	
+			"token", "42a1afbfe6c1cee964acb42838256f60393f4e5f8592fae979a8a2544048bb50",
 			"host", "http://localhost:3000"
 		));
 
 		Tml.getConfig().setCache(Utils.buildMap(
+			"enabled", 		true,	
 	    	"class", 		"com.translationexchange.cache.Memcached",
 	        "host", 		"localhost:11211",
 	        "namespace", 	"6830c3689"
