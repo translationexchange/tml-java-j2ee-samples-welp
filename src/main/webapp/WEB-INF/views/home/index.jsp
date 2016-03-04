@@ -15,6 +15,7 @@
 </head>
 
 <body <tml:language_dir_attribute/>>
+
   <tml:source name="navigation">
 		<!-- Static navbar -->
 		<div class="navbar navbar-default navbar-static-top">
@@ -26,10 +27,12 @@
 		                <span class="icon-bar"></span>
 		                <span class="icon-bar"></span>
 		            </button>
-		            <a class="navbar-brand" href="#"><strong>Welp</strong></a>
+		            <a class="navbar-brand" href="#">
+		            	<strong>Welp</strong>
+		            </a>
 		        </div>
 		        <div class="navbar-collapse collapse">
-                <tml:source name="menu">
+                	<tml:source name="menu">
 			            <ul class="nav navbar-nav">
 			                <li><a href="#"><tml:tr label="About Us"/></a></li>
 			                <li><a href="#"><tml:tr label="Search"/></a></li>
@@ -38,9 +41,11 @@
 			                <li><a href="#"><tml:tr label="Help"/></a></li>
 			            </ul>
 		            </tml:source>
+
+		            <tml:language_selector type="sideflags" />
+		            
 		            <tml:source name="login">
 			            <ul class="nav navbar-nav navbar-right">
-		                	<tml:language_selector type="bootstrap" element="li" />
 			                <li class="dropdown">
 			                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 				                    <tml:tr label="More {caret}" token.caret="<b class='caret'></b>" />
@@ -60,6 +65,8 @@
   </tml:source>
 
 	<div class="container">
+	
+	<tml:tr label="This is cool"/>
 	
 	  <div class="content">
 	

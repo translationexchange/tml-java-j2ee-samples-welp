@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2015 Translation Exchange, Inc. All rights reserved.
+ * Copyright (c) 2016 Translation Exchange, Inc. All rights reserved.
  *
  *  _______                  _       _   _             ______          _
  * |__   __|                | |     | | (_)           |  ____|        | |
@@ -39,16 +39,21 @@ public class WelpListener extends TmlListener {
 
 	protected void configureTml() {
 		Tml.getConfig().setApplication(Utils.buildMap(
-			"key", "dbbf1d68249d613d2ec5c21ff2dd266f5cdbe53b6c32ebc0e24969df59a39457",	
-			"token", "42a1afbfe6c1cee964acb42838256f60393f4e5f8592fae979a8a2544048bb50",
-			"host", "http://localhost:3000"
+			"key", "e9ecde2f25c1fed5c555e4bb036210fcde472536f5d71cc8b85f3508de9c845c",	
+			"host", "http://localhost:3000",
+			"cdn_host", "https://trex-snapshots-dev.s3-us-west-1.amazonaws.com"
 		));
-
+		
+		Tml.getConfig().setAgent(Utils.buildMap(
+				"host", "http://localhost:8282/dist/agent.js"
+		));
+	
 		Tml.getConfig().setCache(Utils.buildMap(
-			"enabled", 		true,	
-	    	"class", 		"com.translationexchange.cache.Memcached",
-	        "host", 		"localhost:11211",
-	        "namespace", 	"6830c3689"
+			"enabled", 				true,	
+	    	"class", 				"com.translationexchange.cache.Memcached",
+	        "host", 				"localhost:11211",
+	        "namespace", 			"e9ecde2f25c1",
+	        "version_check_interval", 10
 		));
 	}
 	
