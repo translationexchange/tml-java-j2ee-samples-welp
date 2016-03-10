@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix='tml' uri='/tml-tags' %>
+<%@ taglib prefix="tml" uri="http://www.translationexchange.com/tml" %>
 
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" <tml:language_attributes/> >
@@ -65,8 +65,6 @@
   </tml:source>
 
 	<div class="container">
-	
-	<tml:tr label="This is cool"/>
 	
 	  <div class="content">
 	
