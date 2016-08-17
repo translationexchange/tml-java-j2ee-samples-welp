@@ -1,3 +1,4 @@
+<%@page import="com.translationexchange.core.Tml"%>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="tml" uri="http://www.translationexchange.com/tml" %>
@@ -71,7 +72,9 @@
 	    <div class="row">
 	      <div class="col-sm-12">
 	        <div class="pull-right"><br><a href="#"><tml:tr label="More Cities"/></a></div>
-	        <h4><tml:tr label="Welp {city}" city="Los Angeles"/></h4>
+	        <h4>
+	        	<tml:tr label="Welp {city}" city="Los Angeles"/>
+	        </h4>
 	        <hr>
 	      </div>
 	    </div>
@@ -105,7 +108,7 @@
                 <strong>1. <a href="">${restaurant.name}</a></strong>
                 <div class="text-muted">
                   <tml:image src="/assets/images/${restaurant.rating}-stars.png" title="{num} out of {count || star}" num="${restaurant.rating}" count="5" />
-                  <tml:tr label="{count|| Review}" token.count="${restaurant.review_count}" />
+                  <tml:tr label="{count|| Review}" count="${restaurant.review_count}" />
                 </div>
                 <div class="media">
                   <a class="pull-left" href="#">

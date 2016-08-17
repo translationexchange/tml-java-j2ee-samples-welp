@@ -45,16 +45,24 @@ public class WelpListener extends TmlListener {
 		));
 		
 		Tml.getConfig().setAgent(Utils.buildMap(
-				"host", "http://localhost:8282/dist/agent.js"
+			"host", "http://localhost:8282/dist/agent.js"
 		));
 	
+//		Tml.getConfig().setCache(Utils.buildMap(
+//			"enabled", 				true,	
+//	    	"class", 				"com.translationexchange.cache.Memcached",
+//	        "host", 				"localhost:11211",
+//	        "namespace", 			"e9ecde2f25c1",
+//	        "version_check_interval", 10
+//		));
+
 		Tml.getConfig().setCache(Utils.buildMap(
-			"enabled", 				true,	
-	    	"class", 				"com.translationexchange.cache.Memcached",
-	        "host", 				"localhost:11211",
-	        "namespace", 			"e9ecde2f25c1",
-	        "version_check_interval", 10
+				"enabled", 				true,	
+		    	"class", 				"com.translationexchange.core.cache.FileCache"
+//		        "path", 				"",
+//		        "version", 			    "cache version"
 		));
+
 	}
 	
 }
